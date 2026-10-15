@@ -1,0 +1,68 @@
+{
+  "name": "SiteStack",
+  "short_name": "SiteStack",
+  "description": "Federated 3D design-file viewer: IFC, LandXML, scans and meshes on one datum. Measure and annotate offline.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#12161d",
+  "theme_color": "#12161d",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "./",
+      "accept": {
+        "application/octet-stream": [
+          ".ifc",
+          ".ifczip",
+          ".e57",
+          ".las",
+          ".laz",
+          ".ply",
+          ".pts",
+          ".xyz",
+          ".stl",
+          ".obj",
+          ".fbx",
+          ".3ds",
+          ".dxf",
+          ".glb",
+          ".gltf",
+          ".rvt",
+          ".rfa"
+        ],
+        "application/xml": [
+          ".xml",
+          ".landxml"
+        ],
+        "text/csv": [
+          ".csv"
+        ],
+        "application/json": [
+          ".json"
+        ]
+      }
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}

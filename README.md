@@ -1,2 +1,4 @@
-# sitestack-app
-SiteStack — installable 3D design-file viewer (built app; source is private)
+# SiteStack
+
+Built app for https://ryan1296.github.io/sitestack-app/ — generated, do not edit.
+Source commit: 265412e
