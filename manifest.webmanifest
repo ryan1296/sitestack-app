@@ -47,7 +47,12 @@
           ".glb",
           ".gltf",
           ".rvt",
-          ".rfa"
+          ".rfa",
+          ".dwg",
+          ".nwd",
+          ".nwc",
+          ".dgn",
+          ".skp"
         ],
         "application/xml": [
           ".xml",

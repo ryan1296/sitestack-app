@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteStack · Autodesk sign-in</title>
+<style>body{margin:0;background:#12161d;color:#d7dfe8;font:14px system-ui,sans-serif;display:grid;place-items:center;height:100vh;text-align:center}b{color:#e8a33d}</style>
+</head><body><div id="m">Finishing Autodesk sign-in…</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var msg = { type: 'sitestack-aps-callback', code: q.get('code'), state: q.get('state'), error: q.get('error'), error_description: q.get('error_description') };
+  var sent = false;
+  try { if (window.opener) { window.opener.postMessage(msg, location.origin); sent = true; } } catch (e) {}
+  try { var bc = new BroadcastChannel('sitestack-aps'); bc.postMessage(msg); bc.close(); sent = true; } catch (e) {}
+  document.getElementById('m').innerHTML = msg.error ? 'Sign-in failed: <b>' + (msg.error_description || msg.error).replace(/</g, '&lt;') + '</b>' : sent ? 'Signed in — you can close this window.' : 'Signed in, but SiteStack wasn\'t found. Return to SiteStack and try again.';
+  if (sent && !msg.error) setTimeout(function () { window.close(); }, 300);
+})();
+</script></body></html>
